@@ -1,0 +1,42 @@
+name: Deploy to GitHub Pages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+        contents: write
+    concurrency:
+       group: ${{ github.workflow }}-${{ github.ref }}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+       
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: add path
+      run: |
+          sed -i "3a\base: '/Implicature/'," ./.umirc.ts
+
+    - name: add publicpath 
+      run: |
+          sed -i "4a\publicPath: '/Implicature/'," ./.umirc.ts
+
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Build
+      run: npm run build
+      
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist  # 你的构建输出目录

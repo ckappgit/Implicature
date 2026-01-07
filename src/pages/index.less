@@ -1,0 +1,93 @@
+.translation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+
+  .ant-card {
+    margin-bottom: 16px;
+    
+    .ant-card-head {
+      background: #fafafa;
+    }
+  }
+
+  .translation-result {
+    min-height: 200px;
+    
+    .result-text {
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-size: 14px;
+      line-height: 1.6;
+      padding: 8px;
+      background: #f9f9f9;
+      border-radius: 4px;
+      border: 1px solid #f0f0f0;
+    }
+  }
+
+  .language-swap-btn {
+    font-size: 18px;
+    color: #1890ff;
+    
+    &:hover {
+      color: #40a9ff;
+    }
+  }
+
+  .history-item {
+    transition: all 0.3s;
+    
+    &:hover {
+      background: #fafafa;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 12px;
+    
+    .ant-col {
+      margin-bottom: 16px;
+    }
+  }
+
+  // 页脚样式
+  .footer-disclaimer {
+    margin-top: 24px;
+    padding: 16px 24px;
+    background-color: #fafafa;
+    border-top: 1px solid #f0f0f0;
+    border-radius: 8px;
+    text-align: center;
+    
+    .copyright-text {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+    
+    .disclaimer-alert {
+      margin-top: 12px;
+      background-color: #fffbe6;
+      border: 1px solid #ffe58f;
+      
+      .ant-alert-message {
+        font-weight: bold;
+        color: #d48806;
+      }
+      
+      .ant-alert-description {
+        strong {
+          color: #d48806;
+          font-weight: bold;
+        }
+      }
+    }
+    
+    .usage-note {
+      margin-top: 12px;
+      font-size: 11px;
+      color: #999;
+    }
+  }
+}

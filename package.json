@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "author": "ckappgit <ckappgit@proton.me>",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^6.1.0",
+    "antd": "^6.1.3",
+    "axios": "^1.13.2",
+    "openai": "^6.15.0",
+    "umi": "^4.6.18"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "typescript": "^5.0.3"
+  }
+}
